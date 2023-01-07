@@ -3,7 +3,7 @@ const hamburgerBtn = document.querySelector('.hamburger-icon');
 const cancelBtn = document.querySelector('.cancel-btn');
 const mainBody = document.querySelector('.main-body');
 const mobileScreen = window.matchMedia('screen and (max-width:768px)');
-const mobileMenu = document.querySelector('#mobile-menu');
+const mobileMenu = document.querySelector('mobile-menu');
 const mobileMenuContent = document.querySelectorAll('.nav-items .mobile');
 const menuElements = Array.from(mobileMenuContent);
 
@@ -40,9 +40,8 @@ function chooseSection(e) {
     }
   });
 }
-hamburgerBtn.addEventListener('click', displayMobileMenu);
+hamburgerBtn.addEventListener('click', displayMobileMenu());
 cancelBtn.addEventListener('click', reverseEvent);
 for (let i = 0; i < menuElements.length; i += 1) {
-  menuElements[i].addEventListener('click', chooseSection);
+  menuElements.addEventListener('click', chooseSection);
 }
-// produce bug to repo
